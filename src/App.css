@@ -34,7 +34,7 @@ p {
 
 /* ######################################### */
 
-.nav_ul {
+.nav-li {
     padding: 0 1.2rem;
 }
 
@@ -42,6 +42,27 @@ p {
     color: var(--text-color);
     font-size: 1.1rem;
 }
+
+/* .nav-sec1 {
+    display: block;
+}
+
+.sticky-nav1 {
+    position: sticky !important;
+    top: 0;
+    background: var(--primary-color);
+    z-index: 10;
+    animation:  stickyHeader 0.3s ease forwards;
+}
+
+@keyframes stickyHeader {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+} */
 
 /* ######################################### */
 /* ######################################### */

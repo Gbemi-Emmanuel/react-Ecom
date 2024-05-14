@@ -1,11 +1,28 @@
 import { NavLink } from "react-router-dom"
 import img from '../../assets/12782ac2b8ae20cf43f86afa1f4f6076.png'
+import { useEffect, useState } from "react"
 
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+
+  const HandleScrolled   =() => {
+    const offsets = window.scrollY;
+    if(offsets > 200) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', HandleScrolled)
+  }, []);
+
   return (
     <div>
-      <nav className="navbar sticky-top navbar-expand-lg">
+      <nav className={`navbar sticky-top navbar-expand-lg nav-sec1 ${scrolled ? "sticky-nav1" : " "}`}>
   <div className="container">
     <NavLink>
      <img className="" src={img} alt="" width='30px'/>
@@ -15,16 +32,16 @@ const Header = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mx-auto  mb-lg-0 nav_ul">
-        <li className="nav-item">
+        <li className="nav-item nav-li">
           <NavLink className="nav-link" to='/'>Home</NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item nav-li">
           <NavLink className="nav-link" to='/About'>About</NavLink>
         </li> 
-        <li className="nav-item"> 
+        <li className="nav-item nav-li"> 
           <NavLink className="nav-link" to='/Products'>Products</NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item nav-li">
           <NavLink className="nav-link" to='/contact'>Contact Us</NavLink>
         </li>
       </ul>
